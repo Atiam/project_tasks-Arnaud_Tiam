@@ -159,15 +159,17 @@ function handleDrop(event, ui) {
 $(document).ready(function () {
   renderTaskList();
 
+  // create an event listener for the form that runs the handleaddtask function
+  const taskFormEl = $(`#task-form`);
+  taskFormEl.on(`submit`, handleAddTask);
+
+
   // Make the due date field a date piker
   $( "#taskDueDate" ).datepicker({
     changeMonth: true,
     changeYear: true,
   });
 
-// create an event listener for the form that runs the handleaddtask function
-  // const taskFormEl = $(`#task-form`);
-  // taskFormEl.on(`submit`, handleAddTask);
-  $('#task-form').submit(handleAddTask);
+
 
 });
