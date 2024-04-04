@@ -20,7 +20,7 @@ localStorage.setItem('nextId', JSON.stringify(nextId))
 function createTaskCard(task) {
   const taskCard = $(`<div>`)
     .addClass(`card task-card draggable my-3`)
-    .attr(`data-task-id, task.id`);
+    .attr(`data-task-id`, task.id);
   const cardHeader = $("<div>").addClass("card-header h4").text(task.name);
   const cardBody = $("<div>").addClass("card-body");
   const cardDescription = $("<p>").addClass("card-text").text(task.type);
@@ -28,8 +28,8 @@ function createTaskCard(task) {
   const cardDeleteBtn = $("<button>")
     .addClass("btn btn-danger delete")
     .text("Delete")
-    .attr("data-project-id", task.id);
-  cardDeleteBtn.on("click", handleDeleteProject);
+    .attr(`data-task-id`, task.id);
+  cardDeleteBtn.on("click", handleDeleteTask);
 
   // Gather all the elements created above and append them to the correct elements.
   cardBody.append(cardDescription, cardDueDate, cardDeleteBtn);
@@ -69,18 +69,17 @@ for (const task of taskList) {
     opacity: 0.7,
     zIndex: 100,
     // // ? This is the function that creates the clone of the card that is dragged. This is purely visual and does not affect the data.
-    // helper: function (e) {
+     helper: function (e) {
     //     // Check if the target of the drag event is the card itself or a child element. If it is the card itself, clone it, otherwise find the parent card  that is draggable and clone that.
-    //     const original = $(e.target).hasClass('ui-draggable')
-    //       ? $(e.target)
-    //       : $(e.target).closest('.ui-draggable');
+         const original = $(e.target).hasClass('ui-draggable')
+           ? $(e.target)
+           : $(e.target).closest('.ui-draggable');
     //     // Return the clone with the width set to the width of the original card. This is so the clone does not take up the entire width of the lane. This is to also fix a visual bug where the card shrinks as it's dragged to the right.
-    //     return original.clone().css({
-    //       width: original.outerWidth(),
-    //     });
-    //   },
-    // });
-  });
+         return original.clone().css({
+           width: original.outerWidth(),
+         });
+       },
+     });
 }
 
 // Todo: create a function to handle adding a new task
@@ -120,9 +119,8 @@ renderTaskList();
 
 // Todo: create a function to handle deleting a task
 function handleDeleteTask(event) {
-  const taskId = $(this).attr("#data-task-id");
-  // const tasks = readProjectsFromStorage();
-
+  const taskId = $(this).attr(`data-task-id`);
+  
   //Remove project from the array. 
   taskList.forEach((task) => {
     if (task.id === taskId) {
@@ -153,7 +151,7 @@ function handleDrop(event, ui) {
   }
   //Save the updated projects array to localStorage (overwritting the previous one) and render the new project data to the screen.
   localStorage.setItem("tasks", JSON.stringify(taskList));
-  //renderTaskList();
+  renderTaskList();
 
 }
 
@@ -168,7 +166,8 @@ $(document).ready(function () {
   });
 
 // create an event listener for the form that runs the handleaddtask function
-  const taskFormEl = $(`#task-form`);
-  taskFormEl.on(`submit`, handleAddTask);
+  // const taskFormEl = $(`#task-form`);
+  // taskFormEl.on(`submit`, handleAddTask);
+  $('#task-form').submit(handleAddTask);
 
 });
