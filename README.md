@@ -14,10 +14,14 @@ https://atiam.github.io/project_tasks-Arnaud_Tiam/
 ## Images
 That web app looks like this;
 
--first pages/landing page:
-
+-first pages
 ![alt text](https://github.com/Atiam/project_tasks-Arnaud_Tiam/blob/main/assets/images/task%20board%201.png)
-![alt text](https://github.com/Atiam/two-page-blog-site_Arnaud-Tiam/blob/main/assets/images/SecondPage.png)
+
+-Modal form:
+![alt text](https://github.com/Atiam/project_tasks-Arnaud_Tiam/blob/main/assets/images/add%20task.png)
+
+-Show how task is draggable
+![alt text](https://github.com/Atiam/project_tasks-Arnaud_Tiam/blob/main/assets/images/Task%20board%202.png)
 
 
 
