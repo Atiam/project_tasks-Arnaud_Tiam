@@ -15,7 +15,8 @@ https://atiam.github.io/project_tasks-Arnaud_Tiam/
 That web app looks like this;
 
 -first pages/landing page:
-![alt text](https://github.com/Atiam/two-page-blog-site_Arnaud-Tiam/blob/main/assets/images/FirstPage.png)
+
+![alt text](https://github.com/Atiam/two-page-blog-site_Arnaud-Tiam/blob/main/assets/images/FirstPage.png](https://github.com/Atiam/project_tasks-Arnaud_Tiam/blob/main/assets/images/task%20board%201.png?raw=true)
 
 -Second Page, light mode:
 ![alt text](https://github.com/Atiam/two-page-blog-site_Arnaud-Tiam/blob/main/assets/images/SecondPage.png)
