@@ -9,7 +9,7 @@ The code has been validated using the Markup Validation Service (https://validat
 
 ## Access to the website
 To access the website, click on this link:
-https://atiam.github.io/project_tasks-Arnaud_Tiam/
+https://atiam.github.io/tasks_tracker-Arnaud_Tiam/
 
 ## Images
 That web app looks like this;
